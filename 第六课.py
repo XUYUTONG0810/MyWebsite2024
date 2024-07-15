@@ -19,7 +19,7 @@ def music_loading(music):
 # 页面 
 def page_1():
     # 我的音乐推荐
-    st.write('# :musical_note::blue[我的音乐推荐]')
+    st.write('# :musical_note: :blue[我的音乐推荐]')
     
     st.write('我喜欢电子音乐，节奏能将一切不愉快甩开')
     music_loading('Nevada.mp3')
