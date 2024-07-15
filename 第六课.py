@@ -51,16 +51,18 @@ def page_2():
         size = uploaded_file.size
         img = Image.open(uploaded_file)
         
-        cc1 = st.toggle('图片变色RBG')
-        cc2 = st.toggle('图片变色GRB')
-        cc3 = st.toggle('图片变色BRG')
-        cc4 = st.toggle('图片变色BGR')
-        st.write('*不要同时选择以上4个滑块中的多个，否则效果会达不到预期*')
-        
-        gr = st.toggle('灰度')
-        iv = st.toggle('反色')
-        ga = st.toggle('模糊')
-        al = st.toggle('透明')
+        st.write('*不要选择四种图片变色中的多个，否则可能达不到预期*')
+        l1, l2= st.columns([1, 1])
+        with l1:
+            cc1 = st.toggle('图片变色RBG')
+            cc2 = st.toggle('图片变色GRB')
+            gr = st.toggle('灰度')
+            iv = st.toggle('反色')
+        with l2:
+            cc3 = st.toggle('图片变色BRG')
+            cc4 = st.toggle('图片变色BGR')
+            ga = st.toggle('模糊')
+            al = st.toggle('透明')
         if al:
             a = st.slider('你想要的透明度是：', 0, 255, 0)
 
@@ -91,7 +93,7 @@ def page_2():
 
 def page_3():
     # 我的智慧词典
-    st.write('# :book:智能词典')
+    st.write('# :book: :blue[智能词典]')
 
     # 遍历词典
     with open('words_space.txt', 'r', encoding='utf-8') as f:
@@ -133,7 +135,7 @@ def page_3():
            
 def page_4():
     # 我的留言区
-    st.write('# :email:我的留言区')
+    st.write('# :email: :blue[我的留言区]')
     with open('leave_messages.txt', 'r', encoding='utf-8') as f:
         messages_list = f.read().split('\n')
     for i in range(len(messages_list)):
@@ -163,7 +165,7 @@ def page_4():
 
 def page_5():
     # 我的兴趣学科
-    st.write('# :earth_asia:我爱地理学')
+    st.write('# :earth_asia: :blue[我爱地理学]')
     st.write('刚接触地理这个学科时，我便被深深吸引，我想记住每一幅地图，我想了解我们脚下星球的一切知识')
     
     # 小知识问答
